@@ -44,9 +44,46 @@
         .home{
             color: #350587;
         }
-        main{
+        .hum{
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+         }
+         .hum .span{
+            height: 2px;
+            width: 22px;
+            background-color: black;
+            margin: 4px 0;
+            transition: 0.4s;
+         }
+        
+         @media (max-width:800px){
+            ul{
+                 position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
 
-        }
+             .navbar ul.show {
+                max-height: 500px; /* Arbitrary large number to allow menu expansion */
+            }
+
+             .hum {
+                display: flex;
+            }
+
+            .navbar ul a {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+         }
+
         .body{
            display: flex;
            flex-direction: column;
