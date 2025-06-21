@@ -11,9 +11,15 @@
     <header>
         <div class="img-logo">
             <img class="logo" src="City_logo.png" alt="">
+        </div>  
+        <div class="hum" onclick="toggleMenu()">
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
         </div>
-        <na class="navbar">
-            <ul>
+
+        <nav class="navbar">
+            <ul id="menu">
                 <a href="home.html">
                     <li class="home">Home</li>
                 </a>
@@ -112,5 +118,11 @@
 
         </div>
     </main>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
