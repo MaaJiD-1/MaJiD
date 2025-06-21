@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 100px 30px 0;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 70px;
+            background-color: white;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            list-style-type: none;
+        }
+        li:hover{
+            color: rgb(236, 2, 2);
+        }
+        a{
+              text-decoration: none;
+            color: black;
+        }
+
+        .logo{
+            height: 40px;
+        }
+        .home{
+            color: #350587;
+        }
+        main{
+
+        }
+        .all{
+            display: flex;
+            position: relative;
+        }
+
+        .slide-images{
+           height: 400px;
+           flex: 1 ;
+           overflow: hidden;
+        }
+        .slide-img-holder{
+            display: grid;
+            grid-template-columns: repeat(5,100%);
+            width: 100%;
+            height: 100%;
+        }
+        #silde-img-1{
+            background-image: url(banner-5.jpg);
+            background-position: center;
+        }
+         #silde-img-2{
+            background-image: url(banner-4.jpg);
+            background-position: center;
+        }
+         #silde-img-3{
+            background-image: url(banner-6.jpg);
+            background-position: center;
+        }
+         #silde-img-4{
+            background-image: url(banner-7.jpg);
+            background-position: center;
+        }
+         #silde-img-5{
+            background-image: url(city-hospital-banner.jpg);
+            background-position: center;
+        }
+         .button-holder{
+            position: absolute;
+            left: 45%;
+            bottom: 0%;
+        }
+        .button{
+            background-color: white;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: .3rem;
+        }
+        .button:hover{
+            box-shadow: 1px 1px 5px black;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img class="logo" src="City_logo.png" alt="">
+        </div>
+        <na class="navbar">
+            <ul>
+                <a href="home.html">
+                    <li class="home">Home</li>
+                </a>
+                <a href="Doctors.html">
+                    <li class="doctor">Doctors</li>
+                </a>
+                <a href="Book-apointment.html">
+                    <li class="Book-apointment">Book Appointment</li>
+                </a>
+                <a href="register.html">
+                    <li class="register">Register</li>
+                </a>
+                <a href="login.html">
+                    <li class="login">Login</li>
+                </a>
+                <a href="services.html">
+                    <li class="services">Services</li>
+                </a>
+                <a href="about.html">
+                    <li class="about">About</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="all">
+            <div class="slide-images">
+                <div class="slide-img-holder">
+                    <div id="silde-img-1"></div>
+                    <div id="silde-img-2"></div>
+                    <div id="silde-img-3"></div>
+                    <div id="silde-img-4"></div>
+                    <div id="silde-img-5"></div>
+                </div>
+            </div>
+            <div class="button-holder">
+                <a href="#silde-img-1" class="button"></a>
+                <a href="#silde-img-2" class="button"></a>
+                <a href="#silde-img-3" class="button"></a>
+                <a href="#silde-img-4" class="button"></a>
+                <a href="#silde-img-5" class="button"></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

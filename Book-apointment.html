@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 100px;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 70px;
+            background-color: white;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            list-style-type: none;
+        }
+       li{
+            transition: all 0.3s linear;
+        }
+        li:hover{
+            color: rgb(236, 2, 2);
+            scale: 105%;
+        }
+        a{
+              text-decoration: none;
+            color: black;
+        }
+
+        .logo{
+            height: 40px;
+        }
+        .Book-apointment{
+            color: #350587;
+        }
+
+
+         .hero {
+      background: linear-gradient(rgba(0, 76, 153, 0.7), rgba(0, 76, 153, 0.7)), 
+        url('https://images.unsplash.com/photo-1588776814546-46b1b76c4487?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #28a745;
+      padding: 12px 30px;
+      color: white;
+      border: none;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #218838;
+    }
+
+    .form-section {
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #004c99;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #f9f9f9;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+   
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+    }
+
+    #success-message {
+      margin-top: 20px;
+      color: #28a745;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #004c99;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header nav {
+        margin-top: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+     .hum{
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+         }
+         .hum .span{
+            height: 2px;
+            width: 22px;
+            background-color: black;
+            margin: 4px 0;
+            transition: 0.4s;
+         }
+        
+         @media (max-width:800px){
+            ul{
+                 position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+
+             .navbar ul.show {
+                max-height: 500px; /* Arbitrary large number to allow menu expansion */
+            }
+
+             .hum {
+                display: flex;
+            }
+
+            .navbar ul a {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img class="logo" src="City_logo.png" alt="">
+        </div>
+          <div class="hum" onclick="toggleMenu()">
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
+        </div>
+        <na class="navbar">
+            <ul id="menu">
+                <a href="home.html">
+                    <li class="home">Home</li>
+                </a>
+                <a href="Doctors.html">
+                    <li class="doctor">Doctors</li>
+                </a>
+                <a href="Book-apointment.html">
+                    <li class="Book-apointment">Book Appointment</li>
+                </a>
+                <a href="register.html">
+                    <li class="register">Register</li>
+                </a>
+                <a href="login.html">
+                    <li class="login">Login</li>
+                </a>
+                <a href="services.html">
+                    <li class="services">Services</li>
+                </a>
+                <a href="about.html">
+                    <li class="about">About</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+   <section class="hero">
+    <div class="container">
+      <h2>Your Health, Our Priority</h2>
+      <p>Schedule your visit with our experienced doctors in just a few clicks.</p>
+      <a href="#" class="btn-primary">Book Now</a>
+    </div>
+  </section>
+
+  <section id="appointment" class="form-section">
+    <div class="container">
+      <h2>Book an Appointment</h2>
+      <form id="form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" required>
+            <option value="">Choose...</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="neurology">Neurology</option>
+            <option value="pediatrics">Pediatrics</option>
+            <option value="orthopedics">Orthopedics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Submit</button>
+        <p id="success-message"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 City Hospital. All rights reserved.</p>
+    </div>
+  </footer>
+   <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>

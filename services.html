@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 100px;
+            background-color: #f1f1f1;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 70px;
+            background-color: white;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            list-style-type: none;
+        }
+       li{
+            transition: all 0.3s linear;
+        }
+        li:hover{
+            color: rgb(236, 2, 2);
+            scale: 105%;
+        }
+        a{
+              text-decoration: none;
+            color: black;
+        }
+
+        .logo{
+            height: 40px;
+        }
+        .services{
+            color: #350587;
+        }
+
+
+
+        .section-3 h1{
+            text-align: center;
+        }
+        .all{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-top: 40px;
+        }
+        
+         @media (max-width:479px) {
+            .all{
+            display: grid;
+            grid-template-columns:   1fr;
+            margin-top: 40px;
+        }
+         }
+        @media (max-width:750px) and (min-width:480px){
+            .all{
+            display: grid;
+            grid-template-columns:  1fr  1fr;
+            margin-top: 40px;
+        }
+         }
+        @media (max-width:899px) and (min-width:751px){
+            .all{
+            display: grid;
+            grid-template-columns:  1fr 1fr 1fr;
+            margin-top: 40px;
+        }
+         }
+         
+        .service{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-bottom: 1px solid rgb(223, 219, 219);
+            border-right: 1px solid rgb(223, 219, 219);
+            padding: 50px 20px;
+
+        }
+        .images{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .image{
+            height: 100px;
+            transition: transform 0.4s linear ;
+        }
+        .image:hover{
+           transform:translateY(-13px) ;
+        }
+        .service-name{
+            margin-bottom: 30px;
+        }
+        .read-more{
+            margin-bottom: 10px;
+        }
+        .read:hover{
+            color: red;
+        }
+         .hum{
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+         }
+         .hum .span{
+            height: 2px;
+            width: 22px;
+            background-color: black;
+            margin: 4px 0;
+            transition: 0.4s;
+         }
+        
+         @media (max-width:800px){
+            ul{
+                 position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+
+             .navbar ul.show {
+                max-height: 500px; /* Arbitrary large number to allow menu expansion */
+            }
+
+             .hum {
+                display: flex;
+            }
+
+            .navbar ul a {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img class="logo" src="City_logo.png" alt="">
+        </div>
+          <div class="hum" onclick="toggleMenu()">
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
+        </div>
+        <na class="navbar">
+            <ul id="menu">
+                <a href="home.html">
+                    <li class="home">Home</li>
+                </a>
+                <a href="Doctors.html">
+                    <li class="doctor">Doctors</li>
+                </a>
+                <a href="Book-apointment.html">
+                    <li class="Book-apointment">Book Appointment</li>
+                </a>
+                <a href="register.html">
+                    <li class="register">Register</li>
+                </a>
+                <a href="login.html">
+                    <li class="login">Login</li>
+                </a>
+                <a href="services.html">
+                    <li class="services">Services</li>
+                </a>
+                <a href="about.html">
+                    <li class="about">About</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="body">
+              <div class="section-3">
+                <h1>Services We Offer</h1>
+                <div class="all">
+                    <div class="service">
+                        <div class="images">
+                            <img class="image" src="icon-medicines.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>General medicine</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="icon-surgery.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>General Surgery</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="icon-sexual-health.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Gynaecology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="icon-joint.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Orthopedic Surgery</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="service">
+                        <div class="images">
+                            <img class="image" src="Pediatric-Surgery-1.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Pediatric Surgery</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="pediatrics.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>pediatrics</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="ear.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>ENT</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="heart.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Cardiac Surgery</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="service">
+                        <div class="images">
+                            <img class="image" src="cardiology.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Cardiology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="Anesthesia.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Anesthesia</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="brain.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Neurology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="eye-care.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Opthalmology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="service">
+                        <div class="images">
+                            <img class="image" src="Dermatology.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Dermatology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="x-ray.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Radiology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="kidneys.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Urology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+                     <div class="service">
+                        <div class="images">
+                            <img class="image" src="Pulmonology.png" alt="">
+                        </div>
+                        <div class="service-name">
+                            <h2>Pulmonology</h2>
+                        </div>
+                        <div class="read-more">
+                            <a class="read" href="#">Read More &nbsp; +</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+     <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>

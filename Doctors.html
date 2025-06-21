@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding-top: 140px;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 70px;
+            background-color: white;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            list-style-type: none;
+        }
+       li{
+            transition: all 0.3s linear;
+        }
+        li:hover{
+            color: rgb(236, 2, 2);
+            scale: 105%;
+        }
+        a{
+              text-decoration: none;
+            color: black;
+        }
+
+        .logo{
+            height: 40px;
+        }
+        .doctor{
+            color: #350587;
+        }
+        .all{
+             display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px 60px;
+            margin: 0 50px;
+        }
+        @media (max-width:930px){
+            .all{
+             display: grid;
+            grid-template-columns:  1fr 1fr;
+            gap: 70px 60px;
+            margin: 0 50px;
+        }
+         }
+         @media (max-width:660px){
+            .all{
+             display: grid;
+            grid-template-columns:   1fr;
+            gap: 70px 60px;
+            margin: 0 50px;
+        }
+        }
+        .flex{
+           box-shadow: 0 0 5px ;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           transition: all 0.4s ease ;
+        }
+        .flex:hover{
+            scale: 1.1;             
+        }
+        .doctor-img{
+            max-width: 70%;
+            margin-bottom: 20px;
+            margin-top: -60px;
+           
+        }
+        .flex h2{
+            color:rgb(234, 6, 6) ;
+            margin-bottom: 20px;
+        }
+        .department,
+        .retire{
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .time{
+            color: red;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .work-time{
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .work-time span{
+            color: red;
+            
+            
+        }
+        
+         .hum{
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+         }
+         .hum .span{
+            height: 2px;
+            width: 22px;
+            background-color: black;
+            margin: 4px 0;
+            transition: 0.4s;
+         }
+        
+         @media (max-width:800px){
+            ul{
+                 position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+
+             .navbar ul.show {
+                max-height: 500px; /* Arbitrary large number to allow menu expansion */
+            }
+
+             .hum {
+                display: flex;
+            }
+
+            .navbar ul a {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img class="logo" src="City_logo.png" alt="">
+        </div>
+          <div class="hum" onclick="toggleMenu()">
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
+        </div>
+        <na class="navbar">
+            <ul id="menu">
+                <a href="home.html">
+                    <li class="home">Home</li>
+                </a>
+                <a href="Doctors.html">
+                    <li class="doctor">Doctors</li>
+                </a>
+                <a href="Book-apointment.html">
+                    <li class="Book-apointment">Book Appointment</li>
+                </a>
+                <a href="register.html">
+                    <li class="register">Register</li>
+                </a>
+                <a href="login.html">
+                    <li class="login">Login</li>
+                </a>
+                <a href="services.html">
+                    <li class="services">Services</li>
+                </a>
+                <a href="about.html">
+                    <li class="about">About</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="all">
+            <div class="flex">
+                    <img class="doctor-img" src="Men-doctor-vector.png" alt="">
+                    <h2>Dr. Muhammad Arshad</h2>
+                    <p class="department">Consultant Physician & Gastroenterologist</p>
+                    <p class="retire">Retired Professor F.C.P.S (Medicine)</p>
+                    <p class="time">Timing</p>
+                    <p class="work-time"><span>Morning</span> – 10:30 AM To 04:00 PM</p>
+                    <p class="work-time"><span>Evening</span> – 07:30 PM To 10:00 PM</p>
+
+            </div>
+              <div class="flex">
+                    <img class="doctor-img" src="Men-doctor-vector.png" alt="">
+                    <h2>Dr. Muhammad Arshad</h2>
+                    <p class="department">Consultant Physician & Gastroenterologist</p>
+                    <p class="retire">Retired Professor F.C.P.S (Medicine)</p>
+                    <p class="time">Timing</p>
+                    <p class="work-time"><span>Morning</span> – 10:30 AM To 04:00 PM</p>
+                    <p class="work-time"><span>Evening</span> – 07:30 PM To 10:00 PM</p>
+
+            </div>
+              <div class="flex">
+                    <img class="doctor-img" src="Men-doctor-vector.png" alt="">
+                    <h2>Dr. Muhammad Arshad</h2>
+                    <p class="department">Consultant Physician & Gastroenterologist</p>
+                    <p class="retire">Retired Professor F.C.P.S (Medicine)</p>
+                    <p class="time">Timing</p>
+                    <p class="work-time"><span>Morning</span> – 10:30 AM To 04:00 PM</p>
+                    <p class="work-time"><span>Evening</span> – 07:30 PM To 10:00 PM</p>
+
+            </div>
+        </div>
+    </main>
+     <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>

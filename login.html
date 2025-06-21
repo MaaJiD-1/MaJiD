@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f1f1;
+            padding-top: 50px;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 70px;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            list-style-type: none;
+        }
+       li{
+            transition: all 0.3s linear;
+        }
+        li:hover{
+            color: rgb(236, 2, 2);
+            scale: 105%;
+        }
+        a{
+              text-decoration: none;
+            color: black;
+        }
+
+        .logo{
+            height: 40px;
+        }
+        .login{
+            color: #350587;
+        }
+           .all{
+           
+             box-shadow: 1px 1px 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90vw;
+    max-width: 400px;
+    min-width: 280px;
+            
+        }
+      
+         h1{
+            text-align: center;
+        }
+        .control{
+            margin:20px 0;
+        }
+        input{
+            width: 90%;
+            border: none;
+            background: transparent;
+            border-bottom: 2px solid ;
+            padding: 10px;
+            font-size: 18px;
+            transition: scale 0.3s linear ;
+        }
+         input:hover{
+            scale: 1.1;
+        }
+        span{
+            display: block;
+            height: 20px;
+            margin-top: 5px;
+            color: red;
+            font-size: 14px;
+        }
+        label{
+            display: block;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        input:focus{
+            outline: none;
+            scale: 1.1;
+        }
+        .link{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .link a{
+            color: blue;
+            text-decoration: underline;
+        }
+        .btn-holder{
+            display:flex ;
+            justify-content: center;
+         }
+         button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 1px 1px 10px;
+            transition: scale 0.4s linear;
+         }
+         button:hover{
+            scale: 1.1;
+            cursor: pointer;
+         }
+          .hum{
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+         }
+         .hum .span{
+            height: 2px;
+            width: 22px;
+            background-color: black;
+            margin: 4px 0;
+            transition: 0.4s;
+         }
+        
+         @media (max-width:800px){
+            ul{
+                 position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+
+             .navbar ul.show {
+                max-height: 500px; /* Arbitrary large number to allow menu expansion */
+            }
+
+             .hum {
+                display: flex;
+            }
+
+            .navbar ul a {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="img-logo">
+            <img class="logo" src="City_logo.png" alt="">
+        </div>
+         <div class="hum" onclick="toggleMenu()">
+            <span class="span"></span>
+            <span class="span"></span>
+            <span class="span"></span>
+        </div>
+        <na class="navbar">
+            <ul id="menu">
+                <a href="home.html">
+                    <li class="home">Home</li>
+                </a>
+                <a href="Doctors.html">
+                    <li class="doctor">Doctors</li>
+                </a>
+                <a href="Book-apointment.html">
+                    <li class="Book-apointment">Book Appointment</li>
+                </a>
+                <a href="register.html">
+                    <li class="register">Register</li>
+                </a>
+                <a href="login.html">
+                    <li class="login">Login</li>
+                </a>
+                <a href="services.html">
+                    <li class="services">Services</li>
+                </a>
+                <a href="about.html">
+                    <li class="about">About</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="all">
+            <h1>Sign in</h1>
+          <form action="">
+           
+             <div class="control">
+                <label for="">Email</label>
+                <input type="email"  id="">
+                <span></span>
+            </div>
+             <div class="control">
+                <label for="">Password</label>
+                <input type="password"  id="">
+                <span></span>
+            </div>
+             <div class="link">
+                <a href="register.html">Create  account</a>
+            </div>
+            <div class="btn-holder">
+
+                <button>SIgn in</button>
+            </div>
+           
+          </form>
+        </div>
+    </main>
+     <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
