@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    h1{
+        text-align: center;
+        margin: 20px 0 10px;
+    }
+    
+    .all{
+        box-shadow: 0 0 2px ;
+        width: 400px;
+        height: 320px;
+        z-index: 1;
+    }
+  
+
+    .control{
+        margin-left: 30px;
+    }
+
+    label{
+        font-weight: bold;
+       font-size: 18px;
+    }
+
+    input{
+        border: none;
+        box-shadow: 0 0 1px;
+      
+       
+    }
+
+    .one{
+         padding:5px ;
+        width: 80%;
+        border-radius: 3px;
+        
+    }
+
+    .two{
+        width: 8%;
+          border-radius: 3px;
+          height: 20px;
+          
+    }
+
+    button{
+        width: 80%;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 3px;
+        border: none;
+        margin: 30px 0 0 30px;
+    }
+
+    span {
+    display: block;
+    height: 20px; 
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    
+}
+input:focus{
+    outline: none;
+
+}
+
+  .main{
+            position: relative;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           z-index: 1;
+           overflow: hidden;
+           border-radius: 5px;
+        }
+.main::before{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 160%;
+            background: linear-gradient(to right,black);
+            animation: rotate 4s linear infinite;
+
+        }
+         .main::after{
+            content: '';
+            position: absolute;
+           background:white ;
+             inset: 4px;
+           
+
+        }
+        @keyframes rotate{
+            from{
+                transition: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    
+
+
+</style>
+<body>
+    <div class="main">
+
+        <div class="all">
+            <form action="" id="form">
+                <h1>Form validation</h1>
+                <div class="control">
+                    
+                <label for="">Enter Cardholders Name:</label><br>
+                <input type="text" id="name" class="one"> <br>
+                <span id="name-error"></span>
+            </div>
+            <div class="control">
+                <label for="">Card Number:</label> <br>
+                <input type="text"  id="number" class="one"> <br>
+                 <span id="number-error"></span>
+            </div>
+            <div class="control">
+                <label for="">Card Expiry Date:</label>
+                <input type="tetx" id="month" class="two"> / <input type="text" id="year" class="two">
+                 
+            </div>
+            <button type="submit">Submit Info</button>
+        </form>
+    </div>
+    </div>
+    <script>
+        let form=document.getElementById("form");
+        let name=document.getElementById("name");
+        let number=document.getElementById("number");
+        let month=document.getElementById("month");
+         let year=document.getElementById("year");
+        let name_error=document.getElementById("name-error");
+        let number_error=document.getElementById("number-error");
+
+
+        month.addEventListener("input",(x)=>{
+            month.value = month.value.replace(/\D/g, "").slice(0, 2); 
+        });
+        year.addEventListener("input",(m)=>{
+             year.value = year.value.replace(/\D/g, "").slice(0, 2); 
+});
+
+        
+
+        form.addEventListener("submit",(e)=>{
+           
+
+            name_error.innerHTML="";
+            number_error.innerHTML="";
+            month.style.border = "none";
+            month.style.boxShadow = "0 0 1px";
+            year.style.border = "none";
+            year.style.boxShadow = "0 0 1px";
+
+            if(name.value.trim()===""){
+
+                name_error.innerHTML="required*";
+                e.preventDefault();
+            }
+
+            if(number.value.trim()===""){
+                number_error.innerHTML="Required*";
+                 e.preventDefault();
+            }
+
+            else if (isNaN(Number(number.value.trim()))) {
+                number_error.innerHTML = "Need a number*";
+              e.preventDefault();
+            }
+
+             else if(number.value.length!==16){
+                 number_error.innerHTML="Number must be 16 digit"
+              e.preventDefault();
+            }
+
+            if(month.value.trim()===""){
+                month.style.border="2px solid red";
+                 e.preventDefault();
+            }
+             else if (isNaN(Number(month.value.trim()))) {
+                month.style.border="2px solid red";
+              e.preventDefault();
+            }
+            
+         
+
+            else if(month.value<1 || month.value>12){
+                 month.style.border="2px solid red";
+              e.preventDefault();
+            }
+
+
+             if(year.value.trim()===""){
+                year.style.border="2px solid red";
+                 e.preventDefault();
+            }
+             else if (isNaN(Number(year.value.trim()))) {
+                year.style.border="2px solid red";
+              e.preventDefault();
+            }
+            
+         
+
+            else if(year.value<28){
+                 year.style.border="2px solid red";
+              e.preventDefault();
+            }
+
+             
+           
+
+        });
+        
+
+    </script>
+</body>
+</html>

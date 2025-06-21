@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>City Hospital | Book Appointment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      background-color: #004c99;
+      padding: 20px 0;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #ffdd57;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 76, 153, 0.7), rgba(0, 76, 153, 0.7)), 
+        url('https://images.unsplash.com/photo-1588776814546-46b1b76c4487?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #28a745;
+      padding: 12px 30px;
+      color: white;
+      border: none;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #218838;
+    }
+
+    .form-section {
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #004c99;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #f9f9f9;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+   
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+    }
+
+    #success-message {
+      margin-top: 20px;
+      color: #28a745;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #004c99;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header nav {
+        margin-top: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>City Hospital</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Appointment</a>
+        <a href="#">Departments</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Your Health, Our Priority</h2>
+      <p>Schedule your visit with our experienced doctors in just a few clicks.</p>
+      <a href="#" class="btn-primary">Book Now</a>
+    </div>
+  </section>
+
+  <section id="appointment" class="form-section">
+    <div class="container">
+      <h2>Book an Appointment</h2>
+      <form id="form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" required>
+            <option value="">Choose...</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="neurology">Neurology</option>
+            <option value="pediatrics">Pediatrics</option>
+            <option value="orthopedics">Orthopedics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Submit</button>
+        <p id="success-message"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 City Hospital. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const department = document.getElementById("department").value;
+      const date = document.getElementById("date").value;
+
+      if (!name || !email || !phone || !department || !date) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      document.getElementById("success-message").textContent =
+        "✅ Appointment booked successfully!";
+      document.getElementById("form").reset();
+    });
+  </script>
+
+</body>
+</html>
